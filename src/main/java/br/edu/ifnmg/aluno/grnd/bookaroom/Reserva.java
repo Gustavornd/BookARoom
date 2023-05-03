@@ -13,6 +13,7 @@ import java.util.Calendar;
  * @author gusta
  */
 public class Reserva {
+    private static Reserva instance = null;
     private LocalDate dataAlocacao;
     private LocalTime horaInicio;
     private LocalTime horaFim;
@@ -37,6 +38,14 @@ public class Reserva {
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Getteres/Setteres">
+    
+    public static Reserva getInstance(LocalDate dataAlocacao, LocalTime horaInicio, LocalTime horaFim, String assunto, SalaReuniao sala, Equipamento equipamento) {
+        if (instance == null) {
+            instance = new Reserva(dataAlocacao, horaInicio, horaFim, assunto, sala, equipamento);
+        }
+        return instance;
+        //o ideal aqui é ter alguma indicação que a reserva não pode ser criada porque já existe
+    }
     
     public LocalDate getDataAlocacao() {
         return dataAlocacao;

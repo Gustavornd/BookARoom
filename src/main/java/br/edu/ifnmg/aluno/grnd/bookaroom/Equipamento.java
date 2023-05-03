@@ -18,13 +18,22 @@ public class Equipamento {
     private String nome;
     private ArrayList<Reserva> reservas = new ArrayList<>();
 
+
     //<editor-fold defaultstate="collapsed" desc="Constructor">
     public Equipamento(String patrimonio, String nome) {
         this.patrimonio = patrimonio;
         this.nome = nome;
-    }//</editor-fold>
+    }
+
+    
+    
+
+
+//</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Getteres/Setteres">
+
+
     
 
     public String getPatrimonio() {
